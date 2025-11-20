@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DISENO - Design e Arquitetura Ltda. Premier architectural and engineering services in Tubarão, Santa Catarina. Led by Fabiany Meneghel.">
+    <title>DISENO | Design e Arquitetura Ltda</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           1. VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-blue: #0f2c40;      /* Architectural Blueprint Blue */
+            --secondary-gray: #7f8c8d;    /* Concrete Gray */
+            --accent-gold: #c0a062;       /* Subtle Luxury Accent */
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --bg-white: #ffffff;
+            --bg-light-gray: #f4f6f7;
+            --container-width: 1140px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: var(--bg-white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* =========================================
+           2. LAYOUT UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        .section-title span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--secondary-gray);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--primary-blue);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--primary-blue);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-blue);
+        }
+
+        /* =========================================
+           3. HEADER
+           ========================================= */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(15, 44, 64, 0.7), rgba(15, 44, 64, 0.7)),
+                        url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Architecture Sketch Image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 80px; /* Header offset */
+        }
+
+        .hero-content h1 {
+            color: #fff;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-gold);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #ddd;
+            font-weight: 300;
+        }
+
+        .hero-btn {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .hero-btn:hover {
+            color: var(--accent-gold);
+        }
+
+        /* =========================================
+           5. ABOUT US
+           ========================================= */
+        .about {
+            background-color: var(--bg-white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--secondary-gray);
+        }
+
+        .principal-card {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--bg-light-gray);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .principal-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 2px;
+            box-shadow: 20px -20px 0 var(--primary-blue);
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            background-color: var(--bg-light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 40px 30px;
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .service-item:hover {
+            border-bottom-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            font-size: 0.95rem;
+            color: var(--secondary-gray);
+        }
+
+        /* =========================================
+           7. WHY CHOOSE US
+           ========================================= */
+        .advantages {
+            background-color: var(--primary-blue);
+            color: #fff;
+        }
+
+        .advantages .section-title h2 { color: #fff; }
+        .advantages .section-title { border-left-color: #fff; }
+
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .adv-box {
+            text-align: left;
+        }
+
+        .adv-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(255,255,255,0.1);
+            line-height: 1;
+        }
+
+        .adv-box h3 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            margin-top: -20px;
+        }
+
+        .adv-box p {
+            color: #ccc;
+        }
+
+        /* =========================================
+           8. OUR PROCESS
+           ========================================= */
+        .process {
+            background-color: var(--bg-white);
+            text-align: center;
+        }
+        
+        .process .section-title {
+            text-align: left; 
+            /* Keep title left aligned as per design language */
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 15%;
+            right: 15%;
+            height: 1px;
+            background: #ddd;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            background: #fff;
+            padding: 0 15px;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-white);
+            border: 2px solid var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        /* =========================================
+           9. CONTACT
+           ========================================= */
+        .contact {
+            background-color: var(--bg-light-gray);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 0;
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .contact-info {
+            background: var(--primary-blue);
+            color: #fff;
+            padding: 60px;
+        }
+
+        .contact-info h3 {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            padding: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #eee;
+            background: #f9f9f9;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        textarea.form-control {
+            height: 120px;
+            resize: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        footer {
+            background: #1a1a1a;
+            color: #555;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content, .adv-grid, .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .process-steps::before { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">DISENO</div>
+            <nav class="nav-menu">
+                <a href="#about">About</a>
+                <a href="#services">Expertise</a>
+                <a href="#process">Process</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Engineering Elegance.</h1>
+            <p>DISENO - Design e Arquitetura Ltda combines structural precision with aesthetic innovation to define the skyline of Tubarão and Santa Catarina.</p>
+            <a href="#contact" class="btn hero-btn">Consult Our Team</a>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span>Our Firm</span>
+                <h2>Architecture Meets Integrity</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Diseno - Design e Arquitetura Ltda is a premier architectural and engineering firm rooted in the landscape of Tubarão, Santa Catarina. We believe that true design is not just about visual appeal; it is about the seamless integration of form, function, and structural safety.</p>
+                    <p>Our firm operates at the intersection of technical engineering rigor and creative architectural freedom. We tackle projects ranging from high-end residential complexes to functional commercial spaces, ensuring every line drawn serves a purpose.</p>
+                    <p>With a deep understanding of Brazilian construction regulations and local aesthetics, we guide our clients from the initial concept sketch to the final concrete pour. We are not just designers; we are builders of legacy.</p>
+                    
+                    <div class="principal-card">
+                        <h4>Fabiany Meneghel</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Key Principal & Lead Architect</p>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diseno Architecture Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span>What We Do</span>
+                <h2>Core Disciplines</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">&#9998;</div> <h3>Architectural Design</h3>
+                    <p>We create comprehensive architectural plans for residential and commercial properties. Our designs prioritize ergonomics, natural lighting, and spatial harmony tailored to the Tubarão climate and context.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">&#9881;</div> <h3>Structural Engineering</h3>
+                    <p>Beauty requires a strong backbone. We provide technical engineering services, including structural calculations and stability analysis, ensuring your vision stands the test of time and regulation.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">&#128203;</div> <h3>Project Management</h3>
+                    <p>From permitting to construction oversight, Diseno manages the complex logistics of building. We coordinate contractors and ensure fidelity to the original design specifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span>Why Diseno</span>
+                <h2>The Technical Edge</h2>
+            </div>
+            <div class="adv-grid">
+                <div class="adv-box">
+                    <span class="adv-number">01</span>
+                    <h3>Holistic Approach</h3>
+                    <p>Unlike firms that separate design and engineering, we integrate them. This reduces conflicts during construction and ensures the aesthetic vision is technically viable from day one.</p>
+                </div>
+                <div class="adv-box">
+                    <span class="adv-number">02</span>
+                    <h3>Local Expertise</h3>
+                    <p>Based in Tubarão, we possess intimate knowledge of Santa Catarina's zoning laws, environmental regulations, and material availability, streamlining your approval process.</p>
+                </div>
+                <div class="adv-box">
+                    <span class="adv-number">03</span>
+                    <h3>Led by Fabiany Meneghel</h3>
+                    <p>Direct principal involvement means your project benefits from high-level expertise and accountability at every stage, ensuring a personalized and professional service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process section-padding">
+        <div class="container">
+            <div class="section-title">
+                <span>Methodology</span>
+                <h2>From Blueprint to Build</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-circle">1</div>
+                    <h4>Conceptualization</h4>
+                    <p style="font-size: 0.9rem; color: #777;">We analyze the site topography in Tubarão and your requirements to draft initial sketches and 3D volumetric models.</p>
+                </div>
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <h4>Technical Detailing</h4>
+                    <p style="font-size: 0.9rem; color: #777;">We develop rigorous executive plans, structural calculations, and electrical/hydraulic layouts ready for contractor bidding.</p>
+                </div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <h4>Execution Oversight</h4>
+                    <p style="font-size: 0.9rem; color: #777;">We accompany the construction phase, resolving on-site challenges to ensure the built reality matches the designed dream.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Start Your Project</h3>
+                    <p style="margin-bottom: 40px; opacity: 0.9;">Ready to discuss your architectural needs in Santa Catarina? Contact our team today for a technical consultation.</p>
+                    
+                    <div class="info-item">
+                        <label>Location</label>
+                        <div>Tubarão, Santa Catarina<br>Brazil</div>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <div>info@gislainerobertabelentani.info</div>
+                    </div>
+                    <div class="info-item">
+                        <label>Principal</label>
+                        <div>Fabiany Meneghel</div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Project Type (e.g. Residential, Commercial)">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Describe your project goals..."></textarea>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DISENO - Design e Arquitetura Ltda. All Rights Reserved.</p>
+            <p style="opacity: 0.5; margin-top: 5px;">Tubarão, SC | info@gislainerobertabelentani.info</p>
+        </div>
+    </footer>
+
+</body>
+</html>
